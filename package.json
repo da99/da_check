@@ -1,6 +1,6 @@
 {
   "name": "da_check",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "My personal way of doing validations. (Not ready for use.)",
   "main": "lib/Check.js",
   "directories": {
@@ -19,8 +19,8 @@
   "author": "da99",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "ff8cae9fe3b721f2f00de8e48dad32aafbfa036f"
-  , "dependencies" : {
-    "underscore" : "1.x.x"
+  "gitHead": "ff8cae9fe3b721f2f00de8e48dad32aafbfa036f",
+  "dependencies": {
+    "underscore": "1.x.x"
   }
 }
