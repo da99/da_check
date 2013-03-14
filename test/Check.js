@@ -33,12 +33,13 @@ describe( 'Check', function () {
       assert.equal(result, false);
     });
 
-    it( 'calls River.invalid(msg)', function (done) {
+    it( 'calls da_river.finish(type, err) if flow provided', function (done) {
       var o = {new_data: {name: " name_1 "}};
       var result = Check.new('test 1', function (v) {
         v.define('name', function (v) { v.at_least(100); });
       }).run(o, {finish: function (type, err) {
         assert.equal(err.message, "name must be at least: 100");
+        assert.equal(type, 'not_valid');
         done();
       }});
     });
