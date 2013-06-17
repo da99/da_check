@@ -86,6 +86,22 @@ describe( 'Check', function () {
       }).run(o);
       assert.equal(o.errors, 'name must be between: 5 and 10');
     });
+
+    it( 'passes if length of Array: min <= n <= max', function () {
+      var o = {new_data: {ages: [1,2,3]}};
+      Check.new('between', function (v) {
+        v.define('ages', function (v) { v.between(1,3); });
+      }).run(o);
+      assert.equal(o.errors, undefined);
+    });
+
+    it( 'passes if value is an Integer: min <= n <= max', function () {
+      var o = {new_data: {age: 200}};
+      Check.new('between', function (v) {
+        v.define('age', function (v) { v.between(5,200); });
+      }).run(o);
+      assert.equal(o.errors, undefined);
+    });
   }); // === describe
 
   describe( '.at_least_2_words', function () {
