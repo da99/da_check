@@ -158,6 +158,14 @@ describe( 'Check', function () {
       }).run(o);
       assert.equal(o.errors, 'name must not be empty.');
     });
+
+    it( 'sets error if value is a number less than 1', function () {
+      var o = {new_data: {age: -1}};
+      Check.new('equals', function (v) {
+        v.define('age', function (v) { v.not_empty(); });
+      }).run(o);
+      assert.equal(o.errors, 'age must not be empty.');
+    });
   }); // === describe
 
   describe( '.length_gte', function () {
