@@ -1,6 +1,6 @@
 {
   "name": "da_check",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "My personal way of doing validations. (Not ready for use.)",
   "main": "lib/Check.js",
   "directories": {
