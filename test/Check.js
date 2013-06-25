@@ -7,6 +7,18 @@ var _ = require('underscore')
 
 describe( 'Check', function () {
 
+  describe( '.read_sanitized', function () {
+    it( 'retrieves sanitized value', function () {
+      var o = {new_data: {names: " str "}};
+
+      Check.new('testing read_sanitized', function (v) {
+        v.define('names', function (v) {
+          assert.equal( 'str', v.read_sanitized('names') );
+        });
+      }).run(o);
+    });
+  }); // === end desc
+
   describe( '.run', function () {
 
     it( 'trims values by default', function () {
