@@ -56,7 +56,7 @@ describe( 'Check', function () {
       }});
     });
 
-    it( 'does not validate non-existent keys', function (done) {
+    it( 'validates non-existent keys', function (done) {
       var o = {new_data: {name: " name_1 "}};
       var result = Check.new('test 1', function (v) {
         v.define('name', function (v) { v.at_least(2); });
@@ -64,7 +64,7 @@ describe( 'Check', function () {
       }).run(o, {finish: function (type, err) {
         if (err)
           throw err;
-        assert.deepEqual(o.sanitized_data, {name: 'name_1'});
+        assert.deepEqual(o.sanitized_data, {name: 'name_1', about: null});
         done();
       }});
     });
